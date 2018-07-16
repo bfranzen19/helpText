@@ -11,9 +11,9 @@ for (Schema.DescribeSobjectResult result : results) {
     Boolean isCustom = fieldName.endsWith('__c');
     Boolean hasHelpText = fieldMap.get(fieldName).getDescribe().getInlineHelpText() != null;
     if(isCustom && hasHelpText == false) {
-      System.debug('NO HELP TEXT (__c): \n' + 'API name --  ' + fieldMap.get(fieldName).getDescribe().getName() + '\n label -- ' + fieldMap.get(fieldName).getDescribe().getLabel() + '\n \n');
+      System.debug('CUSTOM FIELD: \n' + 'API name --  ' + fieldMap.get(fieldName).getDescribe().getName() + '\n label -- ' + fieldMap.get(fieldName).getDescribe().getLabel() + '\n \n');
   	} else {
-      System.debug('NO HELP TEXT (standard): \n' + 'API name --  ' + fieldMap.get(fieldName).getDescribe().getName() + '\n label -- ' + fieldMap.get(fieldName).getDescribe().getLabel() + '\n \n');
+      System.debug('STANDARD FIELD: \n' + 'API name --  ' + fieldMap.get(fieldName).getDescribe().getName() + '\n label -- ' + fieldMap.get(fieldName).getDescribe().getLabel() + '\n \n');
     }
   }
 }
